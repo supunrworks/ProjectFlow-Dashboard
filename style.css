@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "navnar main"
+        "sidebar main"
+        "sidebar footer"
+}
+
+#sidebar {
+    height: 100%;
+    grid-area: sidebar;
+    border-right: 1px solid hsl(0, 0%, 85%);
+}
+
+.headimg {
+    display: flex;
+    margin: 20px 0px 0px 10px;
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+.hicon {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 5px;
+    height: 20px;
+    border-radius: 8px;
+}
+
+#sidebar h1 {
+    font-family: "Lexend", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    position: relative;
+    bottom: 40px;
+}
+
+#sidebar ul {
+    margin: 20px 0px 20px 0px;
+}
+
+#sidebar ul li {
+    padding: 10px;
+    border: #0f172a;
+    box-shadow: #0f172a;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+}
+
+#sidebar ul li a {
+    font-family: sans-serif;
+    display: inline-block;
+    text-decoration: none;
+
+}
+
+#sidebar ul li :hover {
+    background-color: #edf0f7;
+}
+
+main {
+    grid-area: main;
+}
+
+.maintitle {
+    margin: 20px;
+    float: left;
+}
+
+main h1 {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+main p {
+    font-family: sans-serif;
+    font-size: small;
+    color: gray;
+}
+
+.modal-overlay {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: rgb(251, 253, 255);
+    width: 90%;
+    max-width: 520px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-family: sans-serif;
+
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.field label {
+    display: block;
+    font-family: sans-serif;
+    padding-bottom: 5px;
+
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+input {
+    border: 1px solid rgb(226, 226, 226);
+}
+
+textarea,
+select {
+    width: 100%;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 6px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    margin: 30px;
+    padding: 10px 25px;
+    float: right;
+    background: #1a326b;
+    color: rgb(252, 252, 252);
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: white;
+    margin: 30px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.btn {
+    display: none;
+}
+
+@media(max-width: 500px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        width: 250px;
+        display: none;
+    }
+
+    .show {
+        display: block;
+
+    }
+
+    .btn {
+        display: contents;
+
+    }
+}
+
+.prog {
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    gap: 50px;
+    font-family: sans-serif;
+}
+
+.stat-card {
+    background: #e3ebf7;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stat-header {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.stat-meta {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.task-header {
+    float: left;
+    font-family: sans-serif;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-main h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.tabs {
+    display: flex;
+    gap: 25px;
+}
+
+.tabs :hover {
+    color: #2b2929;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #717680;
+    font-size: 14px;
+}
+
+.tab.active {
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.search {
+    padding-top: 75px;
+
+}
+
+input {
+    padding: 10px;
+}
+
+.sort-btn {
+    background-color: rgb(229, 231, 245);
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+
+.sort-container {
+    position: sticky;
+    display: inline;
+}
+
+.sort-menu {
+    display: none;
+    position: absolute;
+    top: 100;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.sort-container:hover .sort-menu {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+.sort-menu button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.sort-menu button:hover {
+    background-color: #f5f5f5;
+}
+
+.cardsec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 350px;
+    padding: 20px;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+span {
+    padding: 4px 12px 0px 0px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.high {
+    background: #ffebee;
+    color: #c62828;
+    padding: 5px;
+}
+
+.progress {
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 5px;
+}
+
+.foot {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #888;
+}
+
+button.mark {
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover.mark {
+    background-color: #e0e0e0;
+}
+
+footer {
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: "Lexend", sans-serif;
+    font-size: 12px;
+}
+
+details {
+    border: 1px solid #f3ebeb;
+    border-radius: 6px;
+    margin: 10px;
+}
+
+summary {
+    font-weight: bold;
+    margin: 20px
+}
+
+
+details[open] summary {
+    border-bottom: 1px solid #e2d9d9;
+}
