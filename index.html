@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button class="btn" onclick="toggleSidebar()"><span class="material-symbols-outlined">menu </span> </button>
+
+
+    <aside id="sidebar">
+        <div class="headimg">
+            <svg class="hicon" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+            </svg>
+        </div>
+        <h1>Project Flow</h1>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="maintitle">
+            <h1>Dashboard</h1>
+            <p>Track and manage your project tasks.</p>
+        </div>
+
+        <button id="openModal" class="btn-primary">+ Add Task</button>
+
+        <div id="modalOverlay" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Create New Task</h2>
+                    <span id="closeModal" class="close-btn"></span>
+                </div>
+                <p class="subtitle">Fill in the details below to add a task.</p>
+
+                <form id="taskForm">
+                    <div class="field">
+                        <label>Task Name</label>
+                        <input type="text" placeholder="e.g. Build landing page">
+                    </div>
+
+                    <div class="field">
+                        <label>Description</label>
+                        <textarea placeholder="Describe the task..."></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label>Priority</label>
+                            <select>
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Status</label>
+                            <select>
+                                <option>To-Do</option>
+                                <option>In Progress</option>
+                                <option>Completed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Due Date</label>
+                        <input type="date">
+                    </div>
+
+                    <div class="actions">
+                        <button type="button" id="cancelBtn" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Create Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="prog">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Total Tasks</span>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-meta">3 due this week</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>In Progress</span>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-meta">3 due this week</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Completed</span>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-meta">3 due this week</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Overdue</span>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-meta">3 due this week</div>
+            </div>
+
+            <div class="task-header">
+                <div class="header-main">
+                    <h2>Tasks</h2>
+                    <div class="tabs">
+                        <button class="tab active">All</button>
+                        <button class="tab">To Do</button>
+                        <button class="tab">In Progress</button>
+                        <button class="tab">Completed</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search">
+                <input type="text" placeholder="Search tasks...">
+                <div class="sort-container">
+                    <button class="sort-btn">↕ Sort</button>
+                    <div class="sort-menu">
+                        <button>Date</button>
+                        <button>Priority</button>
+                        <button>Name</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cardsec">
+                <div class="card">
+                    <h3>Create user dashboard</h3>
+                    <p>Build the analytics dashboard for end users.</p>
+
+                    <div class="tags">
+                        <span class="high">High</span>
+                        <span class="progress">In Progress</span>
+                    </div>
+
+                    <div class="foot">
+                        <span>Mar 6, 2026</span>
+                        <button class="mark">Mark Completed</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Performance audit</h3>
+                    <p>Run Lighthouse and fix critical issues.</p>
+
+                    <div class="tags">
+                        <span class="high">High</span>
+                        <span class="progress">In Progress</span>
+                    </div>
+
+                    <div class="foot">
+                        <span>Mar 6, 2026</span>
+                        <button class="mark">Mark Completed</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Fix login redirect bug</h3>
+                    <p>Users are redirected to 404 after OAuth login</p>
+
+                    <div class="tags">
+                        <span class="high">High</span>
+                        <span class="progress">In Progress</span>
+                    </div>
+
+                    <div class="foot">
+                        <span>Mar 6, 2026</span>
+                        <button class="mark">Mark Completed</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Onboard new developer</h3>
+                    <p>Pair programming session + codebase walkthrough.</p>
+
+                    <div class="tags">
+                        <span class="high">High</span>
+                        <span class="progress">In Progress</span>
+                    </div>
+
+                    <div class="foot">
+                        <span>Mar 6, 2026</span>
+                        <button class="mark">Mark Completed</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Write API documentation</h3>
+                    <p>Document all REST endpoints with examples</p>
+
+                    <div class="tags">
+                        <span class="high">High</span>
+                        <span class="progress">In Progress</span>
+                    </div>
+
+                    <div class="foot">
+                        <span>Mar 6, 2026</span>
+                        <button class="mark">Mark Completed</button>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer>
+        <details>
+            <summary>How do I create a new task?</summary>
+            Click the "Add Task" button at the top of the dashboard. Fill in the task name, description, priority, and
+            status, then click "Create Task" to add it to your board.
+        </details>
+        <details>
+            <summary>Can I filter tasks by status?</summary>
+            Yes! Use the tab bar above the task grid. You can switch between "All", "In Progress", "Completed", and "To
+            Do" to filter your task view instantly.
+        </details>
+        <details>
+            <summary>How do I sort my tasks?</summary>
+            Click the "Sort" button next to the Tasks heading. You can sort by date, priority, or name. The sort applies
+            to whichever tab you currently have selected.
+        </details>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
