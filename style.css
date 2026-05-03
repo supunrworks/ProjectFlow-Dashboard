@@ -63,7 +63,6 @@ body {
     font-family: sans-serif;
     display: inline-block;
     text-decoration: none;
-
 }
 
 #sidebar ul li :hover {
@@ -124,7 +123,6 @@ main p {
 
 .modal-header h2 {
     font-family: sans-serif;
-
 }
 
 .field {
@@ -135,7 +133,6 @@ main p {
     display: block;
     font-family: sans-serif;
     padding-bottom: 5px;
-
 }
 
 .row {
@@ -166,7 +163,16 @@ textarea {
     margin-top: 2rem;
 }
 
-.btn-primary {
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.topbar .btn-primary {
+    margin: 0;
+    float: none;
     margin: 30px;
     padding: 10px 25px;
     float: right;
@@ -191,26 +197,6 @@ footer {
 
 .btn {
     display: none;
-}
-
-@media(max-width: 500px) {
-    body {
-        grid-template-columns: 1fr;
-    }
-
-    aside {
-        width: 250px;
-        display: none;
-    }
-
-    .show {
-        display: block;
-
-    }
-
-    button.btn {
-        display: contents;
-    }
 }
 
 .prog {
@@ -287,7 +273,6 @@ footer {
 
 .search {
     padding-top: 75px;
-
 }
 
 input {
@@ -300,7 +285,6 @@ input {
     border: 1px solid;
     border-radius: 5px;
 }
-
 
 .sort-container {
     position: sticky;
@@ -403,10 +387,115 @@ details {
 
 summary {
     font-weight: bold;
-    margin: 20px
+    margin: 20px;
 }
-
 
 details[open] summary {
     border-bottom: 1px solid #e2d9d9;
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main"
+            "footer";
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        height: 100vh;
+        background: white;
+        z-index: 999;
+        transition: left 0.3s ease;
+        border-right: 1px solid hsl(0, 0%, 85%);
+    }
+
+    #sidebar.show {
+        left: 0;
+    }
+
+    .btn {
+        display: flex;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1000;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 6px 8px;
+        cursor: pointer;
+    }
+
+    main {
+        padding-top: 55px;
+    }
+
+    .prog {
+        gap: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .stat-card {
+        width: calc(50% - 8px);
+    }
+
+    .task-header {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tabs {
+        gap: 12px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+    }
+
+    .search {
+        padding-top: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .cardsec {
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 1.2rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        margin: 4px 0;
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .stat-card {
+        width: 100%;
+    }
 }
