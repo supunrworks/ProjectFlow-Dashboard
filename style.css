@@ -17,7 +17,7 @@ body {
 }
 
 #sidebar {
-    height: 100%;
+    height: 100vh;
     grid-area: sidebar;
     border-right: 1px solid hsl(0, 0%, 85%);
 }
@@ -145,16 +145,19 @@ input {
     border: 1px solid rgb(226, 226, 226);
 }
 
-textarea,
-select {
+textarea {
     width: 100%;
     border: 1px solid rgb(226, 226, 226);
     border-radius: 6px;
-}
-
-textarea {
     height: 100px;
     resize: none;
+    padding: 20px;
+}
+
+select {
+    width: 100%;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 6px
 }
 
 .actions {
@@ -170,7 +173,7 @@ textarea {
     padding: 0 20px;
 }
 
-.topbar .btn-primary {
+.topbar .tskbtn {
     margin: 0;
     float: none;
     margin: 30px;
@@ -183,13 +186,13 @@ textarea {
     cursor: pointer;
 }
 
-.btn-secondary {
+.actions button {
     background: white;
-    margin: 30px;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 6px;
     cursor: pointer;
 }
+
 
 footer {
     grid-area: footer;
@@ -237,6 +240,7 @@ footer {
 }
 
 .task-header {
+     width: 100%;
     float: left;
     font-family: sans-serif;
     padding: 20px;
@@ -272,7 +276,8 @@ footer {
 }
 
 .search {
-    padding-top: 75px;
+    padding-top: 0px;
+    width: 100%;
 }
 
 input {
@@ -325,6 +330,7 @@ input {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+     width: 100%;
 }
 
 .card {
