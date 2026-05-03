@@ -90,6 +90,14 @@ main p {
     color: gray;
 }
 
+#closeModal {
+    cursor: pointer;
+}
+
+.subtitle {
+    margin-bottom: 10px;
+}
+
 .modal-overlay {
     position: fixed;
     z-index: 1000;
@@ -125,6 +133,7 @@ main p {
     font-family: sans-serif;
 }
 
+
 .field {
     margin-bottom: 10px;
 }
@@ -132,7 +141,7 @@ main p {
 .field label {
     display: block;
     font-family: sans-serif;
-    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .row {
@@ -146,6 +155,7 @@ input {
 }
 
 textarea {
+    font-family: sans-serif;
     width: 100%;
     border: 1px solid rgb(226, 226, 226);
     border-radius: 6px;
@@ -189,6 +199,7 @@ select {
 .actions button {
     background: white;
     padding: 10px;
+    margin-right: 5px;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -240,7 +251,7 @@ footer {
 }
 
 .task-header {
-     width: 100%;
+    width: 100%;
     float: left;
     font-family: sans-serif;
     padding: 20px;
@@ -330,7 +341,7 @@ input {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-     width: 100%;
+    width: 100%;
 }
 
 .card {
@@ -375,6 +386,17 @@ button.mark {
 }
 
 button.mark:hover {
+    background-color: #e0e0e0;
+}
+
+.delete {
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete:hover {
     background-color: #e0e0e0;
 }
 
