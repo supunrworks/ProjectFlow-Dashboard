@@ -8,29 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div>
+        <button class="btn" onclick="toggleSidebar()"><span class="material-symbols-outlined">menu</span></button>
+    </div>
 
-    <button class="btn" onclick="toggleSidebar()"><span class="material-symbols-outlined">menu </span> </button>
-
-
-    <aside id="sidebar">
-        <div class="headimg">
-            <svg class="hicon" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
-            </svg>
-        </div>
-        <h1>Project Flow</h1>
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-        </ul>
-    </aside>
+    <div>
+        <aside id="sidebar">
+            <div class="headimg">
+                <svg class="hicon" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+                </svg>
+            </div>
+            <h1>Project Flow</h1>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </aside>
+    </div>
 
     <main>
         <div class="maintitle">
@@ -38,13 +39,15 @@
             <p>Track and manage your project tasks.</p>
         </div>
 
-        <button id="openModal" class="btn-primary">+ Add Task</button>
+        <div>
+            <button id="openModal" class="btn-primary">+ Add Task</button>
+        </div>
 
         <div id="modalOverlay" class="modal-overlay">
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>Create New Task</h2>
-                    <span id="closeModal" class="close-btn"></span>
+                    <span id="closeModal" class="close-btn">×</span>
                 </div>
                 <p class="subtitle">Fill in the details below to add a task.</p>
 
@@ -144,79 +147,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="cardsec">
                 <div class="card">
-                    <h3>Create user dashboard</h3>
-                    <p>Build the analytics dashboard for end users.</p>
-
-                    <div class="tags">
-                        <span class="high">High</span>
-                        <span class="progress">In Progress</span>
-                    </div>
-
-                    <div class="foot">
-                        <span>Mar 6, 2026</span>
-                        <button class="mark">Mark Completed</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Performance audit</h3>
-                    <p>Run Lighthouse and fix critical issues.</p>
-
-                    <div class="tags">
-                        <span class="high">High</span>
-                        <span class="progress">In Progress</span>
-                    </div>
-
-                    <div class="foot">
-                        <span>Mar 6, 2026</span>
-                        <button class="mark">Mark Completed</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Fix login redirect bug</h3>
-                    <p>Users are redirected to 404 after OAuth login</p>
-
-                    <div class="tags">
-                        <span class="high">High</span>
-                        <span class="progress">In Progress</span>
-                    </div>
-
-                    <div class="foot">
-                        <span>Mar 6, 2026</span>
-                        <button class="mark">Mark Completed</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Onboard new developer</h3>
-                    <p>Pair programming session + codebase walkthrough.</p>
-
-                    <div class="tags">
-                        <span class="high">High</span>
-                        <span class="progress">In Progress</span>
-                    </div>
-
-                    <div class="foot">
-                        <span>Mar 6, 2026</span>
-                        <button class="mark">Mark Completed</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Write API documentation</h3>
-                    <p>Document all REST endpoints with examples</p>
-
-                    <div class="tags">
-                        <span class="high">High</span>
-                        <span class="progress">In Progress</span>
-                    </div>
-
-                    <div class="foot">
-                        <span>Mar 6, 2026</span>
-                        <button class="mark">Mark Completed</button>
-                    </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <footer>
@@ -236,6 +172,7 @@
             to whichever tab you currently have selected.
         </details>
     </footer>
+
     <script src="script.js"></script>
 </body>
 

@@ -1,0 +1,61 @@
+const openBtn = document.getElementById("openModal");
+const closeBtn = document.getElementById("closeModal");
+const cancelBtn = document.getElementById("cancelBtn");
+const modal = document.getElementById("modalOverlay");
+const form = document.getElementById("taskForm");
+const cards = document.querySelector(".cardsec");
+
+openBtn.onclick = function () {
+    modal.style.display = "flex";
+};
+
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+};
+
+cancelBtn.onclick = function () {
+    modal.style.display = "none";
+};
+
+form.onsubmit = function (e) {
+    e.preventDefault();
+
+    let name = form.querySelector("input").value;
+    let desc = form.querySelector("textarea").value;
+    let selects = form.querySelectorAll("select");
+    let priority = selects[0].value;
+    let status = selects[1].value;
+    let date = form.querySelector("input[type='date']").value;
+
+    if (name === "") return;
+
+    let card = document.createElement("div");
+    card.className = "card";
+
+    let pClass = priority.toLowerCase().replace(" ", "");
+    let sClass = status.toLowerCase().replace(" ", "");
+
+    let d = date ? new Date(date).toDateString() : "No date";
+
+    card.innerHTML = `
+        <h3>${name}</h3>
+        <p>${desc}</p>
+        <div class="tags">
+            <span class="${pClass}">${priority}</span>
+            <span class="${sClass}">${status}</span>
+        </div>
+        <div class="foot">
+            <span>${d}</span>
+            <button class="mark">Mark Completed</button>
+        </div>
+    `;
+
+    card.querySelector(".mark").onclick = function () {
+        this.parentElement.previousElementSibling.lastElementChild.textContent = "Completed";
+    };
+
+    cards.appendChild(card);
+
+    form.reset();
+    modal.style.display = "none";
+};

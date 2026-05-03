@@ -208,9 +208,8 @@ footer {
 
     }
 
-    .btn {
+    button.btn {
         display: contents;
-
     }
 }
 
@@ -352,18 +351,18 @@ input {
     padding: 20px;
 }
 
-h3 {
+.card h3 {
     margin: 0 0 10px 0;
     font-size: 18px;
 }
 
-p {
+.card p {
     color: #666;
     font-size: 14px;
     margin-bottom: 15px;
 }
 
-span {
+.card span {
     padding: 4px 12px 0px 0px;
     border-radius: 15px;
     font-size: 12px;
@@ -397,7 +396,7 @@ button.mark {
     cursor: pointer;
 }
 
-button:hover.mark {
+button.mark:hover {
     background-color: #e0e0e0;
 }
 
